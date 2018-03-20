@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>canvas</title>
+</head>
+<body>
+<canvas id="mycanvas" width="1200" height="600" style="border:1px dashed blue;"></canvas>
+<script>
+var canvas=document.getElementById("mycanvas");
+var context=canvas.getContext("2d");
+context.beginPath();
+context.arc(600,275,200,0,2*Math.PI);
+var rgrad=context.createRadialGradient(600,275,200,600,275,150);
+rgrad.addColorStop(1,'yellow');
+rgrad.addColorStop(0,'orange');
+context.fillStyle=rgrad;
+context.fill();
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.scale(0.5,0.9);
+context.moveTo(1140,220);
+context.arc(1040, 220, 100, 0, Math.PI*2, false);
+context.stroke();
+context.fillStyle="white";
+context.fill();
+context.moveTo(1460,220);
+context.arc(1360, 220, 100, 0, Math.PI*2, false);
+context.fill();
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.scale(2,1.11);
+context.beginPath();
+context.moveTo(555,220);
+context.arc(520,220,35,0,2*Math.PI);
+context.fillStyle="#000000";
+context.fill();
+context.stroke();
+context.closePath();
+
+context.beginPath();
+context.moveTo(715,220);
+context.arc(680,220,35,0,2*Math.PI);
+context.fillStyle="black";
+context.fill();
+context.stroke();
+context.closePath();
+
+//mouth
+context.beginPath();
+context.moveTo(530,380);
+context.quadraticCurveTo(700,560,690,310);
+context.quadraticCurveTo(560,410,530,380);
+context.stroke();
+context.fillStyle="black";
+context.fill();
+context.closePath();
+
+//tounge
+context.beginPath();
+context.moveTo(580,400);
+context.quadraticCurveTo(600,420,670,370);
+context.bezierCurveTo(730,510,600,550,580,400);
+context.fillStyle="red";
+context.fill();
+context.moveTo(630,420);
+context.quadraticCurveTo(625,430,660,460);
+context.stroke();
+//pupil
+context.beginPath();
+context.moveTo(550,220);
+context.arc(520, 220, 30, 0, Math.PI/1.5, false);
+context.moveTo(710,220);
+context.arc(680, 220, 30, 0, Math.PI/1.5, false);
+context.fillStyle="grey";
+context.fill();
+context.closePath();
+
+
+
+
+</script>
+
+</body>
+</html>
